@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Risqly™ | Quote Review Automation for Brokers</title>
+    <meta name="title" content="Risqly™ | Quote Review Automation for Brokers" />
+    <meta
+      name="description"
+      content="Review hundreds of quotes in minutes using our simple tool use AI-driven platform. Assist your underwriting team and reduce the time it takes to bind policies."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://risqly.com/" />
+    <meta property="og:title" content="Risqly™ | Quote Review Automation for Brokers" />
+    <meta
+      property="og:description"
+      content="Review hundreds of quotes in minutes using our simple tool use AI-driven platform. Assist your underwriting team and reduce the time it takes to bind policies."
+    />
+    <meta property="og:image" content="./assets/images/open-graph-image.jpg" />
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://risqly.com/" />
+    <meta property="twitter:title" content="Risqly™ | Quote Review Automation for Brokers" />
+    <meta
+      property="twitter:description"
+      content="Review hundreds of quotes in minutes using our simple tool use AI-driven platform. Assist your underwriting team and reduce the time it takes to bind policies."
+    />
+    <meta property="twitter:image" content="./assets/images/open-graph-image.jpg" />
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="./assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./assets/images/favicon/site.webmanifest" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./assets/css/base.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <div class="navbar__container">
+        <!-- Logo -->
+
+        <svg class="navbar__logo box" width="108" height="40" viewBox="0 0 108 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M106.31 15.0909L105.61 13.0586V15.0909H105.083V12.3812H105.885L106.544 14.4097L107.198 12.3812H108V15.0909H107.473V13.0624L106.777 15.0909H106.31Z" fill="white" />
+          <path d="M103.315 15.0909V12.8742H102.461V12.3812H104.726V12.8742H103.872V15.0909H103.315Z" fill="white" />
+          <path d="M91.7928 31.3351L93.578 26.9038L89.1467 16.214H91.7718L94.7541 24.1106L97.7153 16.214H100.319L94.145 31.3351H91.7928Z" fill="white" />
+          <path d="M85.3126 27.1348V12.0137H87.7277V27.1348H85.3126Z" fill="white" />
+          <path
+            d="M82.8441 16.214V31.3351H80.4289V25.7277C79.6728 26.7568 78.5387 27.3868 77.0056 27.3868C73.7924 27.3868 72.0493 24.9297 72.0493 21.6744C72.0493 18.4192 73.7924 15.962 77.0056 15.962C78.6017 15.962 79.7568 16.634 80.5129 17.7471V16.214H82.8441ZM74.5274 21.6744C74.5274 23.8376 75.4725 25.3287 77.5097 25.3287C79.5258 25.3287 80.4709 23.8376 80.4709 21.6744C80.4709 19.5113 79.5258 18.0201 77.5097 18.0201C75.4725 18.0201 74.5274 19.5113 74.5274 21.6744Z"
+            fill="white"
+          />
+          <path
+            d="M66.0843 27.3868C63.2701 27.3868 61.338 26.2738 61.17 23.5436H63.5431C63.7111 25.0767 64.6142 25.5807 66.1473 25.5807C67.5124 25.5807 68.3945 25.0767 68.3945 24.1946C68.3945 23.3755 68.0795 22.9975 65.7693 22.6195C62.388 22.0524 61.443 20.9604 61.443 19.1962C61.443 17.1801 63.2281 15.962 65.8323 15.962C68.8775 15.962 70.5156 17.3691 70.5576 19.6583H68.2685C68.2055 18.1462 67.1134 17.7681 65.8323 17.7681C64.6982 17.7681 63.8371 18.2512 63.8371 19.1122C63.8371 19.9523 64.3412 20.2883 66.5463 20.6453C69.8646 21.2124 70.8097 22.2205 70.8097 24.0476C70.8097 26.2108 68.8355 27.3868 66.0843 27.3868Z"
+            fill="white"
+          />
+          <path d="M57.0824 27.1348V16.214H59.4975V27.1348H57.0824ZM57.0824 14.3869V12.0137H59.4975V14.3869H57.0824Z" fill="white" />
+          <path
+            d="M43.1575 27.1348V12.0137H49.668C53.3223 12.0137 55.1074 14.1349 55.1074 16.7811C55.1074 18.8812 53.8893 20.6033 51.6211 21.2544L55.5904 27.1348H52.6292L48.9749 21.5274H45.7407V27.1348H43.1575ZM45.7407 19.3432H49.563C51.5581 19.3432 52.4822 18.3352 52.4822 16.7811C52.4822 15.2269 51.5581 14.2189 49.563 14.2189H45.7407V19.3432Z"
+            fill="white"
+          />
+          <path
+            d="M17.7253 21.6077L22.7157 21.5892L22.7618 34.2573C22.7725 37.0089 20.5414 39.2554 17.7898 39.2661C15.0381 39.2769 12.7916 37.0458 12.7809 34.2941L12.7778 31.8373L15.0704 30.4476L15.0842 34.2864C15.0903 35.7682 16.2988 36.969 17.7805 36.9644C19.2623 36.9598 20.4631 35.7498 20.4585 34.268L20.4201 23.9033L17.7253 21.6092V21.6077Z"
+            fill="white"
+          />
+          <path
+            d="M22.6782 21.6267L17.8247 21.6444L20.4444 23.8745L20.4577 23.8855V23.9032L20.4959 34.2682C20.5004 35.7706 19.2831 36.9971 17.7806 37.0018C16.2781 37.0064 15.0524 35.789 15.0462 34.2865L15.033 30.5135L12.8153 31.8586L12.8183 34.2939C12.8289 37.0247 15.0587 39.2388 17.7894 39.2283C20.5203 39.2176 22.7345 36.988 22.7238 34.2571L22.6782 21.6267ZM22.7937 34.5151C22.6692 37.1686 20.4759 39.2934 17.7901 39.304C15.0178 39.3148 12.7543 37.0669 12.7433 34.2946L12.7403 31.8373V31.816L12.758 31.805L15.0506 30.4157L15.1079 30.3812V30.4473L15.1219 34.2865C15.1281 35.7474 16.3197 36.9314 17.7806 36.9268C19.1959 36.9224 20.3513 35.8024 20.418 34.4041L20.4209 34.2682L20.3827 23.9201L17.7012 21.6377L17.688 21.6267V21.5701H17.7255L22.7157 21.5517H22.7532V21.5892L22.7995 34.2571L22.7937 34.5151Z"
+            fill="white"
+          />
+          <path
+            d="M16.0292 20.6366L18.5398 24.9499L7.59152 31.3238C5.213 32.7089 2.15271 31.8996 0.76767 29.5227C-0.617368 27.1441 0.191851 24.0838 2.56883 22.6988L4.69553 21.4673L7.04487 22.7572L3.72662 24.6888C2.44599 25.4351 2.01144 27.0827 2.75617 28.3633C3.50089 29.644 5.15004 30.0785 6.43066 29.3338L15.3873 24.1192L16.0261 20.6381L16.0292 20.6366Z"
+            fill="white"
+          />
+          <path
+            d="M16.062 20.6175L18.5722 24.9308L18.5914 24.9631L18.559 24.9822L7.61041 31.3566C5.21402 32.7519 2.131 31.9364 0.735463 29.5418C-0.660013 27.1453 0.154761 24.0616 2.54957 22.6661L4.67681 21.4349L4.69519 21.4238L4.71357 21.4341L7.1216 22.7565L7.06353 22.7896L3.7455 24.7213C2.4829 25.4571 2.0543 27.0817 2.78846 28.3444C3.52268 29.6069 5.14887 30.0355 6.41154 29.3014L15.3534 24.095L15.9893 20.6315L15.9922 20.6131L16.0091 20.6043L16.0121 20.6028L16.0437 20.5874L16.062 20.6175ZM15.424 24.1259L15.4211 24.1428L15.4064 24.1516L6.44976 29.3661C5.15131 30.1212 3.47906 29.681 2.72378 28.3826C1.96861 27.084 2.40944 25.4133 3.70801 24.6566L6.96797 22.758L4.69519 21.5098L2.5878 22.7315C0.228854 24.1061 -0.574289 27.143 0.800148 29.5035C2.17473 31.8626 5.21238 32.6658 7.57292 31.2912L18.4884 24.9359L16.0451 20.7388L15.424 24.1259Z"
+            fill="white"
+          />
+          <path
+            d="M16.0208 18.6808L13.5409 23.011L2.54815 16.7169C0.158881 15.3503 -0.670299 12.2946 0.696313 9.90686C2.06292 7.51913 5.11861 6.68841 7.50634 8.05502L9.6361 9.28037L9.69445 11.9598L6.36238 10.0527C5.07715 9.31722 3.43107 9.76406 2.69556 11.0493C1.96004 12.3345 2.40688 13.9806 3.69211 14.7161L12.6872 19.8662L16.0208 18.6793V18.6808Z"
+            fill="white"
+          />
+          <path
+            d="M0.663349 9.88795C2.0403 7.4822 5.11931 6.64546 7.52506 8.02239L9.65451 9.24772L9.67362 9.25801V9.27933L9.7339 12.0255L9.67583 11.9924L6.34383 10.0857C5.07667 9.36051 3.45333 9.80066 2.72811 11.0677C2.00291 12.3349 2.44371 13.9583 3.71088 14.6834L12.691 19.8244L16.0083 18.6439L16.0583 18.6263V18.6909L16.0531 18.6998L13.5738 23.03L13.5547 23.0623L13.5224 23.0439L2.52965 16.7497C0.122312 15.3727 -0.713577 12.2937 0.663349 9.88795ZM7.48758 8.08781C5.11788 6.73152 2.08505 7.55575 0.728769 9.92544C-0.627525 12.2952 0.195937 15.328 2.56713 16.6842L13.5268 22.9594L15.9392 18.7475L12.6998 19.9016L12.6837 19.9075L3.67339 14.7489C2.37022 14.0031 1.91716 12.3342 2.66269 11.031C3.40854 9.72767 5.07807 9.27444 6.38132 10.0203L9.65524 11.8932L9.59865 9.30212L7.48758 8.08781Z"
+            fill="white"
+          />
+          <path
+            d="M17.7115 17.696L12.7211 17.7145L12.675 5.04643C12.6643 2.29478 14.8954 0.048314 17.6471 0.0375653C20.3987 0.0268167 22.6452 2.25793 22.6559 5.00958L22.659 7.46641L20.3665 8.85605L20.3526 5.01725C20.3465 3.53548 19.138 2.3347 17.6563 2.33931C16.1745 2.34391 14.9737 3.5539 14.9783 5.03568L15.0167 15.4004L17.7115 17.6945V17.696Z"
+            fill="white"
+          />
+          <path
+            d="M22.6181 5.00942C22.6072 2.27867 20.3776 0.0643473 17.6469 0.0750143C14.9162 0.0858442 12.7019 2.31548 12.7125 5.04617L12.7581 17.6758L17.6116 17.6582L14.9926 15.4288L14.9794 15.4178V15.4009L14.9404 5.03588C14.9358 3.53335 16.1539 2.30616 17.6565 2.30149C19.1588 2.29698 20.3837 3.5145 20.3901 5.01677L20.4033 8.78833L22.6203 7.44538L22.6181 5.00942ZM22.6967 7.4667V7.48728L22.6783 7.49831L20.3857 8.88829L20.3291 8.92284V8.85595L20.3151 5.01751C20.3091 3.5565 19.1174 2.37269 17.6565 2.3772C16.1955 2.38174 15.0116 3.57486 15.0161 5.03588L15.0536 15.3825L17.7358 17.6656L17.7491 17.6773V17.7332L17.7116 17.7339L12.7213 17.7523H12.6838V17.7148L12.6375 5.04691C12.6267 2.27446 14.8745 0.010873 17.6469 3.89701e-05C20.4194 -0.0107909 22.6829 2.23701 22.6938 5.00942L22.6967 7.4667Z"
+            fill="white"
+          />
+          <path
+            d="M19.4091 18.6698L16.8985 14.3565L27.8468 7.98254C30.2253 6.59751 33.2856 7.40672 34.6706 9.78371C36.0557 12.1622 35.2465 15.2225 32.8695 16.6076L30.7428 17.839L28.3934 16.5492L31.7117 14.6175C32.9923 13.8713 33.4269 12.2236 32.6821 10.943C31.9374 9.6624 30.2883 9.22785 29.0076 9.97258L20.051 15.1872L19.4122 18.6682L19.4091 18.6698Z"
+            fill="white"
+          />
+          <path
+            d="M27.828 7.95034C30.2244 6.55489 33.3074 7.36977 34.703 9.76445C36.0985 12.1609 35.283 15.2446 32.8881 16.6401L30.7616 17.8713L30.7432 17.8824L30.7249 17.8721L28.3756 16.5821L28.3168 16.5504L28.3742 16.5166L31.6929 14.5849C32.9554 13.8491 33.3842 12.2244 32.65 10.9618C31.9158 9.69936 30.2895 9.27082 29.0269 10.0048L20.0842 15.2104L19.4492 18.6748L19.4455 18.6931L19.4293 18.7019L19.4256 18.7034L19.394 18.7189L19.3764 18.6887L16.8662 14.3754L16.8471 14.3431L16.8794 14.324L27.828 7.95034ZM34.6383 9.80267C33.2637 7.44363 30.2261 6.64045 27.8655 8.01502L16.9492 14.3695L19.3918 18.5652L20.0137 15.1803L20.0174 15.1634L20.0321 15.1546L28.9887 9.94012C30.2872 9.18497 31.9595 9.62573 32.7147 10.9244C33.4697 12.2229 33.0289 13.8937 31.7304 14.6503L28.4705 16.5475L30.7425 17.7956L32.8506 16.5747C35.2095 15.2001 36.0127 12.1631 34.6383 9.80267Z"
+            fill="white"
+          />
+          <path
+            d="M19.4168 20.6241L21.8967 16.2939L32.891 22.588C35.2787 23.9546 36.1094 27.0103 34.7428 29.398C33.3762 31.7858 30.3205 32.6165 27.9328 31.2499L25.803 30.0245L25.7447 27.345L29.0768 29.2522C30.362 29.9877 32.0081 29.5408 32.7436 28.2556C33.4791 26.9704 33.0323 25.3243 31.747 24.5888L22.752 19.4387L19.4184 20.6256L19.4168 20.6241Z"
+            fill="white"
+          />
+          <path
+            d="M21.9153 16.2616L32.9094 22.5551C35.3152 23.932 36.1526 27.011 34.7757 29.4168C33.3988 31.8226 30.3198 32.6593 27.914 31.2824L25.7846 30.057L25.7662 30.0467L25.7655 30.0254L25.7059 27.2793L25.7633 27.3124L29.0953 29.2198C30.3624 29.945 31.9858 29.5042 32.711 28.237C33.4362 26.9698 32.9954 25.3465 31.7282 24.6213L22.7473 19.4796L19.4308 20.6609L19.4087 20.6689L19.3698 20.63L19.3845 20.6057L21.8638 16.2755L21.8829 16.2425L21.9153 16.2616ZM19.4977 20.5572L22.7393 19.4032L22.7554 19.3973L31.7657 24.5559C33.069 25.3018 33.5222 26.9713 32.7764 28.2745C32.0305 29.5777 30.361 30.0303 29.0578 29.2845L25.7831 27.4108L25.8397 30.0019L27.9515 31.2169L28.1757 31.3382C30.5092 32.5205 33.3965 31.6749 34.7103 29.3793C36.0665 27.0096 35.2416 23.9768 32.872 22.6205L21.9101 16.3446L19.4977 20.5572Z"
+            fill="white"
+          />
+        </svg>
+
+        <!-- Desktop Menu -->
+        <nav class="navbar__menu">
+          <a href="#approach" class="nav-link">Approach</a>
+          <a href="#impact" class="nav-link">Impact</a>
+          <a href="#benefits" class="nav-link">Benefits</a>
+          <a href="#performance" class="nav-link">Performance</a>
+          <a href="#workflow" class="nav-link">How it works</a>
+          <a href="#privacy" class="nav-link">Privacy</a>
+        </nav>
+
+        <!-- CTA -->
+        <a href="#waitlist" class="navbar__cta btn-2">
+          <span class="navbar__cta-overflow">
+            <span class="navbar__cta-text">Join the Waitlist</span>
+            <span class="navbar__cta-text">Join the Waitlist</span>
+          </span>
+        </a>
+
+        <!-- Hamburger (Mobile) -->
+        <button class="navbar__toggle" aria-label="Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Mobile Overlay Menu -->
+    <div class="menu-overlay" id="menuOverlay">
+      <div class="menu-overlay__content">
+        <div class="menu-overlay__header">
+          <svg width="108" height="40" viewBox="0 0 108 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="menu-overlay__logo">
+            <path d="M106.31 15.0909L105.61 13.0586V15.0909H105.083V12.3812H105.885L106.544 14.4097L107.198 12.3812H108V15.0909H107.473V13.0624L106.777 15.0909H106.31Z" fill="white" />
+            <path d="M103.315 15.0909V12.8742H102.461V12.3812H104.726V12.8742H103.872V15.0909H103.315Z" fill="white" />
+            <path d="M91.7928 31.3351L93.578 26.9038L89.1467 16.214H91.7718L94.7541 24.1106L97.7153 16.214H100.319L94.145 31.3351H91.7928Z" fill="white" />
+            <path d="M85.3126 27.1348V12.0137H87.7277V27.1348H85.3126Z" fill="white" />
+            <path
+              d="M82.8441 16.214V31.3351H80.4289V25.7277C79.6728 26.7568 78.5387 27.3868 77.0056 27.3868C73.7924 27.3868 72.0493 24.9297 72.0493 21.6744C72.0493 18.4192 73.7924 15.962 77.0056 15.962C78.6017 15.962 79.7568 16.634 80.5129 17.7471V16.214H82.8441ZM74.5274 21.6744C74.5274 23.8376 75.4725 25.3287 77.5097 25.3287C79.5258 25.3287 80.4709 23.8376 80.4709 21.6744C80.4709 19.5113 79.5258 18.0201 77.5097 18.0201C75.4725 18.0201 74.5274 19.5113 74.5274 21.6744Z"
+              fill="white"
+            />
+            <path
+              d="M66.0843 27.3868C63.2701 27.3868 61.338 26.2738 61.17 23.5436H63.5431C63.7111 25.0767 64.6142 25.5807 66.1473 25.5807C67.5124 25.5807 68.3945 25.0767 68.3945 24.1946C68.3945 23.3755 68.0795 22.9975 65.7693 22.6195C62.388 22.0524 61.443 20.9604 61.443 19.1962C61.443 17.1801 63.2281 15.962 65.8323 15.962C68.8775 15.962 70.5156 17.3691 70.5576 19.6583H68.2685C68.2055 18.1462 67.1134 17.7681 65.8323 17.7681C64.6982 17.7681 63.8371 18.2512 63.8371 19.1122C63.8371 19.9523 64.3412 20.2883 66.5463 20.6453C69.8646 21.2124 70.8097 22.2205 70.8097 24.0476C70.8097 26.2108 68.8355 27.3868 66.0843 27.3868Z"
+              fill="white"
+            />
+            <path d="M57.0824 27.1348V16.214H59.4975V27.1348H57.0824ZM57.0824 14.3869V12.0137H59.4975V14.3869H57.0824Z" fill="white" />
+            <path
+              d="M43.1575 27.1348V12.0137H49.668C53.3223 12.0137 55.1074 14.1349 55.1074 16.7811C55.1074 18.8812 53.8893 20.6033 51.6211 21.2544L55.5904 27.1348H52.6292L48.9749 21.5274H45.7407V27.1348H43.1575ZM45.7407 19.3432H49.563C51.5581 19.3432 52.4822 18.3352 52.4822 16.7811C52.4822 15.2269 51.5581 14.2189 49.563 14.2189H45.7407V19.3432Z"
+              fill="white"
+            />
+            <path
+              d="M17.7253 21.6077L22.7157 21.5892L22.7618 34.2573C22.7725 37.0089 20.5414 39.2554 17.7898 39.2661C15.0381 39.2769 12.7916 37.0458 12.7809 34.2941L12.7778 31.8373L15.0704 30.4476L15.0842 34.2864C15.0903 35.7682 16.2988 36.969 17.7805 36.9644C19.2623 36.9598 20.4631 35.7498 20.4585 34.268L20.4201 23.9033L17.7253 21.6092V21.6077Z"
+              fill="white"
+            />
+            <path
+              d="M22.6782 21.6267L17.8247 21.6444L20.4444 23.8745L20.4577 23.8855V23.9032L20.4959 34.2682C20.5004 35.7706 19.2831 36.9971 17.7806 37.0018C16.2781 37.0064 15.0524 35.789 15.0462 34.2865L15.033 30.5135L12.8153 31.8586L12.8183 34.2939C12.8289 37.0247 15.0587 39.2388 17.7894 39.2283C20.5203 39.2176 22.7345 36.988 22.7238 34.2571L22.6782 21.6267ZM22.7937 34.5151C22.6692 37.1686 20.4759 39.2934 17.7901 39.304C15.0178 39.3148 12.7543 37.0669 12.7433 34.2946L12.7403 31.8373V31.816L12.758 31.805L15.0506 30.4157L15.1079 30.3812V30.4473L15.1219 34.2865C15.1281 35.7474 16.3197 36.9314 17.7806 36.9268C19.1959 36.9224 20.3513 35.8024 20.418 34.4041L20.4209 34.2682L20.3827 23.9201L17.7012 21.6377L17.688 21.6267V21.5701H17.7255L22.7157 21.5517H22.7532V21.5892L22.7995 34.2571L22.7937 34.5151Z"
+              fill="white"
+            />
+            <path
+              d="M16.0292 20.6366L18.5398 24.9499L7.59152 31.3238C5.213 32.7089 2.15271 31.8996 0.76767 29.5227C-0.617368 27.1441 0.191851 24.0838 2.56883 22.6988L4.69553 21.4673L7.04487 22.7572L3.72662 24.6888C2.44599 25.4351 2.01144 27.0827 2.75617 28.3633C3.50089 29.644 5.15004 30.0785 6.43066 29.3338L15.3873 24.1192L16.0261 20.6381L16.0292 20.6366Z"
+              fill="white"
+            />
+            <path
+              d="M16.062 20.6175L18.5722 24.9308L18.5914 24.9631L18.559 24.9822L7.61041 31.3566C5.21402 32.7519 2.131 31.9364 0.735463 29.5418C-0.660013 27.1453 0.154761 24.0616 2.54957 22.6661L4.67681 21.4349L4.69519 21.4238L4.71357 21.4341L7.1216 22.7565L7.06353 22.7896L3.7455 24.7213C2.4829 25.4571 2.0543 27.0817 2.78846 28.3444C3.52268 29.6069 5.14887 30.0355 6.41154 29.3014L15.3534 24.095L15.9893 20.6315L15.9922 20.6131L16.0091 20.6043L16.0121 20.6028L16.0437 20.5874L16.062 20.6175ZM15.424 24.1259L15.4211 24.1428L15.4064 24.1516L6.44976 29.3661C5.15131 30.1212 3.47906 29.681 2.72378 28.3826C1.96861 27.084 2.40944 25.4133 3.70801 24.6566L6.96797 22.758L4.69519 21.5098L2.5878 22.7315C0.228854 24.1061 -0.574289 27.143 0.800148 29.5035C2.17473 31.8626 5.21238 32.6658 7.57292 31.2912L18.4884 24.9359L16.0451 20.7388L15.424 24.1259Z"
+              fill="white"
+            />
+            <path
+              d="M16.0208 18.6808L13.5409 23.011L2.54815 16.7169C0.158881 15.3503 -0.670299 12.2946 0.696313 9.90686C2.06292 7.51913 5.11861 6.68841 7.50634 8.05502L9.6361 9.28037L9.69445 11.9598L6.36238 10.0527C5.07715 9.31722 3.43107 9.76406 2.69556 11.0493C1.96004 12.3345 2.40688 13.9806 3.69211 14.7161L12.6872 19.8662L16.0208 18.6793V18.6808Z"
+              fill="white"
+            />
+            <path
+              d="M0.663349 9.88795C2.0403 7.4822 5.11931 6.64546 7.52506 8.02239L9.65451 9.24772L9.67362 9.25801V9.27933L9.7339 12.0255L9.67583 11.9924L6.34383 10.0857C5.07667 9.36051 3.45333 9.80066 2.72811 11.0677C2.00291 12.3349 2.44371 13.9583 3.71088 14.6834L12.691 19.8244L16.0083 18.6439L16.0583 18.6263V18.6909L16.0531 18.6998L13.5738 23.03L13.5547 23.0623L13.5224 23.0439L2.52965 16.7497C0.122312 15.3727 -0.713577 12.2937 0.663349 9.88795ZM7.48758 8.08781C5.11788 6.73152 2.08505 7.55575 0.728769 9.92544C-0.627525 12.2952 0.195937 15.328 2.56713 16.6842L13.5268 22.9594L15.9392 18.7475L12.6998 19.9016L12.6837 19.9075L3.67339 14.7489C2.37022 14.0031 1.91716 12.3342 2.66269 11.031C3.40854 9.72767 5.07807 9.27444 6.38132 10.0203L9.65524 11.8932L9.59865 9.30212L7.48758 8.08781Z"
+              fill="white"
+            />
+            <path
+              d="M17.7115 17.696L12.7211 17.7145L12.675 5.04643C12.6643 2.29478 14.8954 0.048314 17.6471 0.0375653C20.3987 0.0268167 22.6452 2.25793 22.6559 5.00958L22.659 7.46641L20.3665 8.85605L20.3526 5.01725C20.3465 3.53548 19.138 2.3347 17.6563 2.33931C16.1745 2.34391 14.9737 3.5539 14.9783 5.03568L15.0167 15.4004L17.7115 17.6945V17.696Z"
+              fill="white"
+            />
+            <path
+              d="M22.6181 5.00942C22.6072 2.27867 20.3776 0.0643473 17.6469 0.0750143C14.9162 0.0858442 12.7019 2.31548 12.7125 5.04617L12.7581 17.6758L17.6116 17.6582L14.9926 15.4288L14.9794 15.4178V15.4009L14.9404 5.03588C14.9358 3.53335 16.1539 2.30616 17.6565 2.30149C19.1588 2.29698 20.3837 3.5145 20.3901 5.01677L20.4033 8.78833L22.6203 7.44538L22.6181 5.00942ZM22.6967 7.4667V7.48728L22.6783 7.49831L20.3857 8.88829L20.3291 8.92284V8.85595L20.3151 5.01751C20.3091 3.5565 19.1174 2.37269 17.6565 2.3772C16.1955 2.38174 15.0116 3.57486 15.0161 5.03588L15.0536 15.3825L17.7358 17.6656L17.7491 17.6773V17.7332L17.7116 17.7339L12.7213 17.7523H12.6838V17.7148L12.6375 5.04691C12.6267 2.27446 14.8745 0.010873 17.6469 3.89701e-05C20.4194 -0.0107909 22.6829 2.23701 22.6938 5.00942L22.6967 7.4667Z"
+              fill="white"
+            />
+            <path
+              d="M19.4091 18.6698L16.8985 14.3565L27.8468 7.98254C30.2253 6.59751 33.2856 7.40672 34.6706 9.78371C36.0557 12.1622 35.2465 15.2225 32.8695 16.6076L30.7428 17.839L28.3934 16.5492L31.7117 14.6175C32.9923 13.8713 33.4269 12.2236 32.6821 10.943C31.9374 9.6624 30.2883 9.22785 29.0076 9.97258L20.051 15.1872L19.4122 18.6682L19.4091 18.6698Z"
+              fill="white"
+            />
+            <path
+              d="M27.828 7.95034C30.2244 6.55489 33.3074 7.36977 34.703 9.76445C36.0985 12.1609 35.283 15.2446 32.8881 16.6401L30.7616 17.8713L30.7432 17.8824L30.7249 17.8721L28.3756 16.5821L28.3168 16.5504L28.3742 16.5166L31.6929 14.5849C32.9554 13.8491 33.3842 12.2244 32.65 10.9618C31.9158 9.69936 30.2895 9.27082 29.0269 10.0048L20.0842 15.2104L19.4492 18.6748L19.4455 18.6931L19.4293 18.7019L19.4256 18.7034L19.394 18.7189L19.3764 18.6887L16.8662 14.3754L16.8471 14.3431L16.8794 14.324L27.828 7.95034ZM34.6383 9.80267C33.2637 7.44363 30.2261 6.64045 27.8655 8.01502L16.9492 14.3695L19.3918 18.5652L20.0137 15.1803L20.0174 15.1634L20.0321 15.1546L28.9887 9.94012C30.2872 9.18497 31.9595 9.62573 32.7147 10.9244C33.4697 12.2229 33.0289 13.8937 31.7304 14.6503L28.4705 16.5475L30.7425 17.7956L32.8506 16.5747C35.2095 15.2001 36.0127 12.1631 34.6383 9.80267Z"
+              fill="white"
+            />
+            <path
+              d="M19.4168 20.6241L21.8967 16.2939L32.891 22.588C35.2787 23.9546 36.1094 27.0103 34.7428 29.398C33.3762 31.7858 30.3205 32.6165 27.9328 31.2499L25.803 30.0245L25.7447 27.345L29.0768 29.2522C30.362 29.9877 32.0081 29.5408 32.7436 28.2556C33.4791 26.9704 33.0323 25.3243 31.747 24.5888L22.752 19.4387L19.4184 20.6256L19.4168 20.6241Z"
+              fill="white"
+            />
+            <path
+              d="M21.9153 16.2616L32.9094 22.5551C35.3152 23.932 36.1526 27.011 34.7757 29.4168C33.3988 31.8226 30.3198 32.6593 27.914 31.2824L25.7846 30.057L25.7662 30.0467L25.7655 30.0254L25.7059 27.2793L25.7633 27.3124L29.0953 29.2198C30.3624 29.945 31.9858 29.5042 32.711 28.237C33.4362 26.9698 32.9954 25.3465 31.7282 24.6213L22.7473 19.4796L19.4308 20.6609L19.4087 20.6689L19.3698 20.63L19.3845 20.6057L21.8638 16.2755L21.8829 16.2425L21.9153 16.2616ZM19.4977 20.5572L22.7393 19.4032L22.7554 19.3973L31.7657 24.5559C33.069 25.3018 33.5222 26.9713 32.7764 28.2745C32.0305 29.5777 30.361 30.0303 29.0578 29.2845L25.7831 27.4108L25.8397 30.0019L27.9515 31.2169L28.1757 31.3382C30.5092 32.5205 33.3965 31.6749 34.7103 29.3793C36.0665 27.0096 35.2416 23.9768 32.872 22.6205L21.9101 16.3446L19.4977 20.5572Z"
+              fill="white"
+            />
+          </svg>
+
+          <button class="menu-overlay__close" aria-label="Close">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_65_1086)">
+                <path d="M5.13525 5.14122L16.7685 16.7745" stroke="white" stroke-width="2.19359" stroke-miterlimit="10" />
+                <path d="M5.13504 16.7735L16.8006 5.10789" stroke="white" stroke-width="2.19359" stroke-miterlimit="10" />
+              </g>
+              <defs>
+                <clipPath id="clip0_65_1086">
+                  <rect width="21.9359" height="21.9359" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+        </div>
+
+        <nav class="menu-overlay__links">
+          <a href="#approach" class="link-1">Approach</a>
+          <a href="#impact" class="link-1">Impact</a>
+          <a href="#benefits" class="link-1">Benefits</a>
+          <a href="#performance" class="link-1">Performance</a>
+          <a href="#workflow" class="link-1">How it works</a>
+          <a href="#privacy" class="link-1">Privacy</a>
+        </nav>
+
+        <a href="#waitlist" class="menu-overlay__cta btn-2">Join the Waitlist</a>
+      </div>
+    </div>
+    <main>
+      <section class="hero" data-theme="dark">
+        <div class="container">
+          <div class="hero__background"></div>
+          <div class="hero__wrapper">
+            <div class="hero__content">
+              <!-- Early Adopter Label -->
+              <div class="hero__label label-2">
+                <span class="star">★</span>
+                Early adopters: Special pricing
+              </div>
+
+              <!-- Hero Text -->
+              <div class="hero__text">
+                <h1 class="hero__title h3-desktop">Quote review automation for brokers.</h1>
+                <p class="hero__description text-b1 text-b2-desktop">
+                  Review hundreds of quotes in minutes using our simple tool use AI-driven platform. Assist your underwriting team and reduce the time it takes to bind policies.
+                </p>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="hero__features">
+                <li class="hero__feature h10">Actionable reports</li>
+                <li class="hero__feature h10">No privacy risk</li>
+                <li class="hero__feature h10">No integration needed</li>
+                <li class="hero__feature h10">Easy to use</li>
+              </ul>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hero__image">
+              <picture>
+                <source media="(max-width: 767px)" srcset="./assets/images/risqly_mockup-sm.png 1x, ./assets/images/risqly_mockup-sm-2x.png 2x" />
+                <source media="(min-width: 768px)" srcset="./assets/images/risqly_mockup-lg.png 1x, ./assets/images/risqly_mockup-lg-2x.png 2x" />
+                <img src="./assets/images/risqly_mockup-sm.png" alt="Risqly platform interface" class="hero__app-image" />
+              </picture>
+            </div>
+          </div>
+        </div>
+        <div data-theme="light" class="hero__theme-breakpoint"></div>
+      </section>
+      <section class="compare__section" data-theme="light" id="approach">
+        <div class="container">
+          <div class="compare__header">
+            <div class="badge label-1">Smarter</div>
+            <h2 class="title h3-desktop">Pre-reviewed quotes. Faster decisions.</h2>
+            <p class="subtitle text-b1 text-b2-desktop">Minimize manual rework of quotes.</p>
+          </div>
+
+          <div class="comparison">
+            <!-- Old Way -->
+            <div class="compare__card compare__card--old">
+              <h3 class="h5 h7-desktop">Old way</h3>
+              <ul>
+                <li class="text-b3 text-b4-desktop"><span>Quotes are piling up</span></li>
+                <li class="text-b3 text-b4-desktop"><span>Underwriter goes through them one by one</span></li>
+                <li class="text-b3 text-b4-desktop"><span>Back-and-forth with brokers for each quote</span></li>
+                <li class="text-b3 text-b4-desktop"><span>Quotes are submitted slowly</span></li>
+              </ul>
+            </div>
+
+            <!-- New Way -->
+            <div class="compare__card compare__card--new">
+              <h3 class="h5 h7-desktop">New way</h3>
+              <ul>
+                <li class="text-b3 text-b4-desktop"><span>Risqly™ reviews dozens of quotes in minutes</span></li>
+                <li class="text-b3 text-b4-desktop"><span>Underwriter focuses on complex issues</span></li>
+                <li class="text-b3 text-b4-desktop"><span>Risqly™ provides report with all flagged issues</span></li>
+                <li class="text-b3 text-b4-desktop"><span>Less back and forth; quotes are submitted faster</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="stats__section" data-theme="light" id="impact">
+        <div class="container">
+          <div class="stats__content">
+            <div class="stats__header">
+              <div class="badge label-1">Reduce risk</div>
+              <h2 class="title h1 h3-desktop">Increase underwriting performance.</h2>
+              <p class="subtitle text-b1 text-b2-desktop">
+                Reduce churn significantly and see an increase in upsell opportunities. Our data-driven reports empower underwriting to make strategic decisions, leading to measurable success and
+                growth.
+              </p>
+            </div>
+            <div class="stats__data__wrapper">
+              <div class="stat__data">
+                <h3 class="stat__value">30<span>%</span></h3>
+                <p class="stat__text text-b2 text-b3-desktop">
+                  Save on Compliance <br />
+                  Training
+                </p>
+              </div>
+              <div class="stat__data">
+                <h3 class="stat__value">2x</h3>
+                <p class="stat__text text-b2 text-b3-desktop">Faster Quote-<br />to-Bind cycle</p>
+              </div>
+              <div class="stat__data">
+                <h3 class="stat__value">50<span>%</span></h3>
+                <p class="stat__text text-b2 text-b3-desktop">
+                  Reduce <br />
+                  E&O risk
+                </p>
+              </div>
+              <div class="stat__data">
+                <h3 class="stat__value">40+</h3>
+                <p class="stat__text text-b2 text-b3-desktop">
+                  Custom <br />
+                  review rules
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="stats__image">
+            <img src="./assets/images/stat.png" srcset="./assets/images/stat.png 1x, ./assets/images/stat-2x.png 2x" alt="Performance illustration" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features" data-theme="dark" id="benefits">
+        <div class="container">
+          <div class="features__background"></div>
+          <div class="features__content">
+            <!-- Header -->
+            <div class="features__header">
+              <div class="badge label-1">Your quotes</div>
+              <h2 class="title h3-desktop">Reviewed, flagged, automatically.</h2>
+              <p class="subtitle text-b1 text-b2-desktop">Analyze patterns, flag recurring issues, and improve underwriting outcomes with every quote.</p>
+            </div>
+
+            <!-- Features Cards -->
+            <div class="swiper features__slider">
+              <div class="swiper-wrapper">
+                <!-- Card 1 -->
+                <div class="swiper-slide">
+                  <div class="features__card" data-feature="ai-review">
+                    <div class="features__icon">
+                      <!-- SVG for stacks-icon -->
+                      <svg class="icon-stacks" width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M13.6539 10.002V7.08465C13.6539 3.87559 16.292 1.25 19.5164 1.25H54.4175V30.4232C54.4175 33.6323 51.7793 36.2579 48.5549 36.2579"
+                          stroke="#565960"
+                          stroke-width="2.5"
+                          stroke-miterlimit="10"
+                        />
+                        <path
+                          class="fill"
+                          d="M7.44983 18.7539V15.8366C7.44983 12.6275 10.088 10.002 13.3124 10.002H48.2135V39.1752C48.2135 42.3843 45.5753 45.0098 42.3509 45.0098"
+                          stroke="#FDB61C"
+                          stroke-width="2.5"
+                          stroke-miterlimit="10"
+                        />
+                        <path
+                          d="M7.69882 18.7539H42.0136V47.3437C42.0136 50.8445 39.0823 53.7618 35.5648 53.7618H1.25V25.172C1.25 21.6712 4.18128 18.7539 7.69882 18.7539Z"
+                          stroke="#565960"
+                          stroke-width="2.5"
+                          stroke-miterlimit="10"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="h6 h9-desktop">
+                        AI-powered <br />
+                        quote review
+                      </h3>
+                      <p class="features__card-description text-b3">
+                        Use our powerful AI review <br />
+                        assistant to empower your Underwriting team.
+                      </p>
+                    </div>
+                    <button class="features__expand" aria-label="Learn more">
+                      <span>+</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="swiper-slide">
+                  <div class="features__card" data-feature="notifications">
+                    <div class="features__icon">
+                      <!-- Inline SVG for files icon -->
+                      <svg width="48" height="57" class="icon-file" viewBox="0 0 48 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_34_1427)">
+                          <path class="fill" d="M20.2193 25.4912H37.0193" stroke="#FDB61C" stroke-width="2.3" stroke-miterlimit="10" />
+                          <path class="fill" d="M20.2193 33.8911H33.4193" stroke="#FDB61C" stroke-width="2.3" stroke-miterlimit="10" />
+                          <path class="fill" d="M20.2193 42.291H31.0193" stroke="#FDB61C" stroke-width="2.3" stroke-miterlimit="10" />
+                          <path d="M34.3248 13.5004V3.90039H1.74756V46.3474H12.5476" stroke="#565960" stroke-width="2.3" stroke-miterlimit="10" />
+                          <path d="M11.7217 12.6675H45.499V42.3804C45.499 49.3842 39.7627 55.1145 32.7517 55.1145H11.7217V12.6675Z" stroke="#565960" stroke-width="2.3" stroke-miterlimit="10" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_34_1427">
+                            <rect width="48" height="57" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="h6 h9-desktop">
+                        Customized <br />
+                        review rules
+                      </h3>
+                      <p class="features__card-description text-b3">
+                        Add your own list of custom rules to the already existing library of rules provided with the tool. These can be specific to carriers and policy types.
+                      </p>
+                    </div>
+                    <button class="features__expand" aria-label="Learn more"><span>+</span></button>
+                  </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="swiper-slide">
+                  <div class="features__card" data-feature="rules">
+                    <div class="features__icon">
+                      <!-- Inline SVG for bell-icon -->
+                      <svg width="53" height="53" class="icon-bell" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M18.9059 42.3096V44.4175C18.9059 47.8956 21.7517 50.7414 25.2298 50.7414C28.7079 50.7414 31.5537 47.8956 31.5537 44.4175V42.3096"
+                          stroke="#565960"
+                          stroke-width="2.5"
+                          stroke-miterlimit="10"
+                        />
+                        <path
+                          d="M25.1243 1.0083C32.2436 1.00854 37.9678 6.73278 37.9681 13.8521V19.0161C37.9681 21.5097 38.9814 23.8397 40.6722 25.6294L41.973 26.9302C41.1143 27.1965 40.3079 27.5816 39.5706 28.063L38.8909 27.3833L38.8782 27.3716L38.8665 27.3599C36.7691 25.1459 35.4681 22.2091 35.4681 19.0161V13.8521C35.4678 8.1135 30.8629 3.50854 25.1243 3.5083C19.3856 3.5083 14.7808 8.11335 14.7806 13.8521V18.9116C14.7805 22.076 13.6029 25.0324 11.3577 27.2778L7.05988 31.5757L6.75031 31.9175C5.24044 33.6587 4.34617 35.8566 4.34601 38.1987V41.0591H36.5472C37.1137 42.0104 37.8387 42.8562 38.6868 43.5591H1.84601V38.1987C1.84618 35.006 3.14806 32.0698 5.24542 29.856L5.25714 29.8433L9.59015 25.5103C11.3492 23.7509 12.2805 21.4378 12.2806 18.9116V13.8521C12.2808 6.73263 18.0049 1.0083 25.1243 1.0083Z"
+                          fill="#565960"
+                        />
+                        <circle class="fill" cx="45.8524" cy="36.5" r="4.5" fill="#FDB61C" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="h6 h9-desktop">
+                        Internal notification <br />
+                        for high risk items
+                      </h3>
+                      <p class="features__card-description text-b3">
+                        Create notifications to flag high risk quotes or re-occurring coverage problems so that your team can deal with them systematically.
+                      </p>
+                    </div>
+                    <button class="features__expand" aria-label="Learn more"><span>+</span></button>
+                  </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="swiper-slide">
+                  <div class="features__card" data-feature="tracking">
+                    <div class="features__icon">
+                      <!-- Inline SVG for chart-icon -->
+                      <svg width="59" height="57" class="icon-chart" viewBox="0 0 59 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_34_1472)">
+                          <path d="M17.2198 55.3992V23.7144H7.91833V55.3992" stroke="#565960" stroke-width="2.5" stroke-miterlimit="10" />
+                          <path class="fill" d="M34.4687 55.3988V3.88623H25.1672V55.3988" stroke="#FDB61C" stroke-width="2.5" stroke-miterlimit="10" />
+                          <path d="M1.29517 55.3984C1.29517 55.3984 37.4965 55.3984 58.2025 55.3984" stroke="#565960" stroke-width="2.5" stroke-miterlimit="10" />
+                          <path d="M51.7176 55.3986V34.2754H42.4161V55.3986" stroke="#565960" stroke-width="2.5" stroke-miterlimit="10" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_34_1472">
+                            <rect width="58.2955" height="57" fill="white" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="h6 h9-desktop">
+                        Track results, <br />
+                        action on issues
+                      </h3>
+                      <p class="features__card-description text-b3">Monitor how your team is performing and jump in when additional training is required.</p>
+                    </div>
+                    <button class="features__expand" aria-label="Learn more"><span>+</span></button>
+                  </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="swiper-slide">
+                  <div class="features__card" data-feature="tracking">
+                    <div class="features__icon">
+                      <!-- Inline SVG for warning-icon -->
+                      <svg width="56" height="57" class="icon-warning" viewBox="0 0 56 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M27.7724 55.1863C27.7724 55.1863 5.18262 47.4114 5.18262 25.0013V6.5931L27.7724 2.59131L50.3623 6.5931V25.0013C50.3623 47.64 27.7724 55.1863 27.7724 55.1863Z"
+                          stroke="#565960"
+                          stroke-width="2.5"
+                          stroke-miterlimit="10"
+                        />
+                        <path class="fill" d="M27.7695 12.8823V28.8895" stroke="#FDB61C" stroke-width="2.5" stroke-miterlimit="10" />
+                        <path
+                          class="fill"
+                          d="M27.7046 35C28.2569 35 28.7046 35.4477 28.7046 36C28.7046 36.5523 28.2569 37 27.7046 37C27.1523 37 26.7046 36.5523 26.7046 36C26.7046 35.4477 27.1523 35 27.7046 35Z"
+                          fill="#565960"
+                          stroke="#FDB61C"
+                          stroke-width="2"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="h6 h9-desktop">
+                        Risk appetite <br />
+                        assessment
+                      </h3>
+                      <p class="features__card-description text-b3">Determine if the Quote fits your brokerage's Risk Appetite, even if it can be bound.</p>
+                    </div>
+                    <button class="features__expand" aria-label="Learn more"><span>+</span></button>
+                  </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="swiper-slide">
+                  <div class="features__card" data-feature="tracking">
+                    <div class="features__icon">
+                      <!-- Inline SVG for retweet-icon -->
+                      <svg width="48" height="60" class="icon-retweet" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_28_2004)">
+                          <path
+                            d="M40.874 12.2209C28.84 12.2209 14.4227 12.2209 14.4227 12.2209C8.78441 12.2209 4.17126 16.7609 4.17126 22.3097L4.17126 34.8324"
+                            stroke="#565960"
+                            stroke-width="2.5"
+                            stroke-miterlimit="10"
+                          />
+                          <path class="fill" d="M31.6357 22.3638L42.4531 12.2209L31.6357 1.09107" stroke="#FDB61C" stroke-width="2.5" stroke-miterlimit="10" />
+                          <path d="M4.92047 45.9294L32.3413 45.8405C37.9796 45.8405 42.5928 41.3006 42.5928 35.7518L42.5928 22.8311" stroke="#565960" stroke-width="2.5" stroke-miterlimit="10" />
+                          <path class="fill" d="M14.6554 56.4544L3.83789 46.3115L14.6554 35.1816" stroke="#FDB61C" stroke-width="2.5" stroke-miterlimit="10" />
+                        </g>
+                        <defs>
+                          <clipPath id="clip0_28_2004">
+                            <rect width="60" height="48" fill="white" transform="translate(48 2.09815e-06) rotate(90)" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </div>
+
+                    <div>
+                      <span class="tag">Coming soon</span>
+                      <h3 class="h6 h9-desktop">
+                        Automated <br />
+                        audit review
+                      </h3>
+                      <p class="features__card-description text-b3">Use the tool to cross-reference and validate data on the quote with loss history reports, dec pages, etc.</p>
+                    </div>
+                    <button class="features__expand" aria-label="Learn more"><span>+</span></button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slider Controls -->
+              <div class="swiper-pagination features__pagination"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Details Popup -->
+        <div class="features__popup" id="featurePopup" hidden>
+          <div class="features__popup-overlay"></div>
+          <div class="features__popup-content">
+            <button class="features__popup-close" aria-label="Close popup">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <circle opacity="0.9" cx="18" cy="18" r="18" fill="#2D3038" />
+                <circle opacity="1" cx="18" cy="18" r="18" fill="white" class="circle-2" />
+                <g clip-path="url(#clip0_28_1894)">
+                  <path d="M13.2136 13.2214L22.7596 22.7674" stroke="white" stroke-width="1.8" stroke-miterlimit="10" />
+                  <path d="M13.2137 22.7673L22.7861 13.1948" stroke="white" stroke-width="1.8" stroke-miterlimit="10" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_28_1894">
+                    <rect width="18" height="18" fill="white" transform="translate(9 9)" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </button>
+            <div class="features__popup-icon"></div>
+            <span class="features__popup-tag"></span>
+            <h3 class="features__popup-title"></h3>
+            <p class="features__popup-description"></p>
+          </div>
+        </div>
+      </section>
+      <!-- Compliance Section -->
+      <section class="compliance" data-theme="light">
+        <div class="container">
+          <div class="compliance__header">
+            <h2 class="compliance__headline h3 h1-desktop">
+              The future of underwriting combines human expertise, with <span class="highlight"><span>intelligent</span> <span>automation.</span></span>
+            </h2>
+            <p class="compliance__lead text-b1 text-b2-desktop">Give every underwriting team the tool they need to work with confidence, focus on growth, and deliver better outcomes for clients.</p>
+            <div class="compliance__symbol">
+              <img src="./assets/images/compliance-icon.svg" alt="decorative dots" width="28" height="28" />
+            </div>
+            <p class="compliance__text text-b1 text-b2-desktop">Help your team, help your customers by:</p>
+          </div>
+
+          <div class="compliance__metrics">
+            <div class="compliance__item">
+              <h3 class="compliance__metric-title h4">Reducing</h3>
+              <p class="compliance__metric-sub text-b4 text-b1-desktop">E&amp;O Risk</p>
+            </div>
+
+            <div class="compliance__divider" aria-hidden="true"></div>
+
+            <div class="compliance__item">
+              <h3 class="compliance__metric-title h4">30% Faster</h3>
+              <p class="compliance__metric-sub text-b4 text-b1-desktop">Quote Submission</p>
+            </div>
+
+            <div class="compliance__divider" aria-hidden="true"></div>
+
+            <div class="compliance__item">
+              <h3 class="compliance__metric-title h4">Increase</h3>
+              <p class="compliance__metric-sub text-b4 text-b1-desktop">Employee Satisfaction</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Training Section -->
+      <!-- Training  -->
+      <section class="training" data-theme="light">
+        <div class="container training__wrapper">
+          <div class="training__content">
+            <span class="badge label-1">Work smarter</span>
+            <h2 class="title h2 h3-desktop">Faster training, quicker onboarding.</h2>
+
+            <div class="training__grid">
+              <ul class="training__list">
+                <li class="text-b1 text-b2-desktop">
+                  <img src="./assets/images/add-contacts-icon.svg" alt="" class="icon-1" />
+                  Can be used as practice and review tool
+                </li>
+                <li class="text-b1 text-b2-desktop">
+                  <img src="./assets/images/filter-icon.svg" alt="" class="icon-2" />
+                  Focus your team on the bottlenecks
+                </li>
+                <li class="text-b1 text-b2-desktop">
+                  <img src="./assets/images/clock-icon.svg" alt="" class="icon-3" />
+                  Reduced <br />
+                  training time
+                </li>
+                <li class="text-b1 text-b2-desktop">
+                  <img src="./assets/images/add-contacts-1.svg" alt="" class="icon-4" />
+                  Help new hires reduce errors
+                </li>
+                <li class="text-b1 text-b2-desktop">
+                  <img src="./assets/images/add-contacts-2.svg" alt="" class="icon-5" />
+                  Highlight the need for additional training
+                </li>
+                <li class="text-b1 text-b2-desktop">
+                  <img src="./assets/images/book-search-icon.svg" alt="" class="icon-6" />
+                  Review common rework issues on quotes
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="training__visual">
+            <picture>
+              <source media="(min-width:768px)" srcset="./assets/images/training-lg.jpg 1x, ./assets/images/training-lg-2x.jpg 2x" />
+              <img src="./assets/images/training.jpg" srcset="./assets/images/training.jpg 1x, ./assets/images/training-2x.jpg 2x" alt="Risqly platform on monitor and reviews" />
+            </picture>
+          </div>
+        </div>
+      </section>
+      <!-- Performance Section -->
+      <section class="perf" data-theme="dark" id="performance">
+        <div class="container">
+          <div class="perf__header">
+            <span class="badge label-1">Productivity with</span>
+            <h2 class="title h2">
+              Performance <br />
+              in Mind.
+            </h2>
+            <p class="subtitle text-b1 text-b2-desktop">Give your team the tools they need to multiply their productivity.</p>
+          </div>
+          <div class="perf__cards">
+            <div class="perf__card">
+              <img src="./assets/images/layers.svg" alt="" class="icon-layers" />
+              <h3 class="h9">
+                Handle quotes <br />
+                in parallel
+              </h3>
+            </div>
+            <div class="perf__card">
+              <img src="./assets/images/scale-expand.svg" alt="" class="icon-scale" />
+              <h3 class="h9">
+                Scales with your <br />
+                workload
+              </h3>
+            </div>
+            <div class="perf__card">
+              <img src="./assets/images/window.svg" alt="" class="icon-window" />
+              <h3 class="h9">
+                Web-based: Does <br />
+                not slow down <br />
+                your infrastructure
+              </h3>
+            </div>
+            <div class="perf__card">
+              <img src="./assets/images/dashboard.svg" alt="" class="icon-meter" />
+              <h3 class="h9">
+                Near 96% accuracy <br />
+                of data extraction
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow Section -->
+      <section class="workflow" data-theme="light" id="workflow">
+        <div class="container">
+          <div class="workflow__header">
+            <span class="badge label-1">How Risqly™</span>
+            <h2 class="title h2">Fits into your workflow.</h2>
+          </div>
+
+          <div class="workflow__steps">
+            <!-- Step 1 -->
+            <div class="workflow__step workflow__step--1">
+              <div class="workflow__step__content">
+                <div class="workflow__step-number">1</div>
+                <h3 class="workflow__step-title h8 h5-desktop">Provide your team with a link and credentials.</h3>
+                <p class="workflow__step-description text-b1 text-b4-desktop">All they need is access to a web browser, no app installation required.</p>
+              </div>
+              <div class="workflow__mockup">
+                <img src="./assets/images/step-1.png" srcset="./assets/images/step-1.png 1x, ./assets/images/step-1-2x.png 2x" alt="" />
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="workflow__step workflow__step--2">
+              <div class="workflow__step__content">
+                <div class="workflow__step-number">2</div>
+                <h3 class="workflow__step-title h8 h5-desktop">Underwriter drag and drop quotes into the web-app.</h3>
+                <p class="workflow__step-description text-b1 text-b4-desktop">The Risqly™ app can process multiple quotes in parallel, for both types of policies, auto or home.</p>
+              </div>
+              <div class="workflow__mockup workflow__mockup--browser">
+                <img src="./assets/images/step-2.png" srcset="./assets/images/step-2.png 1x, ./assets/images/step-2-2x.png 2x" alt="" />
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="workflow__step workflow__step--3">
+              <div class="workflow__step__content">
+                <div class="workflow__step-number">3</div>
+                <h3 class="workflow__step-title h8 h5-desktop">Report provided with flagged items in the quote.</h3>
+                <p class="workflow__step-description text-b1 text-b4-desktop">Underwriter are provided with a report containing all the flagged issues for each uploaded quote.</p>
+              </div>
+              <div class="workflow__mockup">
+                <img src="./assets/images/step-3.png" srcset="./assets/images/step-3.png 1x, ./assets/images/step-3-2x.png 2x" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Privacy Section -->
+      <section class="priv" data-theme="dark" id="privacy">
+        <div class="container">
+          <div class="priv__header">
+            <span class="badge label-1">[ AI ] with a</span>
+            <h2 class="title h2">
+              Privacy-first <br />
+              mindset.
+            </h2>
+            <p class="subtitle text-b1 text-b2-desktop">Empower your team without introducing additional risk. Risqly™ is built with a privacy-first mindset.</p>
+          </div>
+          <div class="priv__cards">
+            <div class="priv__card">
+              <img src="./assets/images/add-contacts-3.svg" alt="" class="icon-contact" />
+              <h3 class="h9">PII is scrubbed before sending quotes to AI</h3>
+            </div>
+            <div class="priv__card">
+              <img src="./assets/images/globe.svg" alt="" class="icon-globe" />
+              <h3 class="h9">Sensitive data does not leave your country</h3>
+            </div>
+            <div class="priv__card">
+              <img src="./assets/images/clipboard.svg" alt="" class="icon-clipboard" />
+              <h3 class="h9">Stay compliant while introducing new tools</h3>
+            </div>
+            <div class="priv__card">
+              <img src="./assets/images/map-area.svg" alt="" class="icon-maparea" />
+              <h3 class="h9">Custom data residency settings for the entire report</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Waitlist Section -->
+      <section class="waitlist" data-theme="light" id="waitlist">
+        <div class="container">
+          <span class="badge label-1">Co-Create Risqly™</span>
+
+          <h2 class="title h1 h2-desktop">
+            Request <br />
+            early access.
+          </h2>
+          <p class="subtitle text-b1 text-b2-desktop">Join our waitlist, it'll be great.</p>
+
+          <div class="waitlist__benefits">
+            <div class="benefit__item">
+              <img src="./assets/images/wallet.svg" alt="" class="icon-wallet" />
+              <p class="benefit__item__text text-b3 text-b2-desktop">Founding-member perks and pricing</p>
+            </div>
+            <div class="benefit__item">
+              <img src="./assets/images/video.svg" alt="" class="icon-video" />
+              <p class="benefit__item__text text-b3 text-b2-desktop">Behind-the-scenes updates</p>
+            </div>
+            <div class="benefit__item">
+              <img src="./assets/images/message.svg" alt="" class="icon-message" />
+              <p class="benefit__item__text text-b3 text-b2-desktop">Ask anything so we can co-create Risqly™</p>
+            </div>
+            <div class="benefit__item">
+              <img src="./assets/images/users.svg" alt="" class="icon-users" />
+              <p class="benefit__item__text text-b3 text-b2-desktop">One-on-one founder sessions</p>
+            </div>
+          </div>
+
+          <form class="waitlist__form" id="waitlistForm">
+            <div class="form__fields">
+              <div class="form__field form__field--select">
+                <select name="bmsName" class="form__field__input text-b3 text-b4-desktop" id="bmsSelect">
+                  <option value="">BMS you are using</option>
+                  <option value="Acturis">Acturis</option>
+                  <option value="Applied EPIC">Applied EPIC</option>
+                  <option value="Applied TAM">Applied TAM</option>
+                  <option value="PowerBroker">PowerBroker</option>
+                  <option value="Vertafore SIG">Vertafore SIG</option>
+                  <option value="Vertafore AMS360">Vertafore AMS360</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form__field" id="otherBmsField" style="display: none">
+                <label class="text-b3 text-b4-desktop">
+                  <span>BMS name</span>
+                  <input type="text" name="otherBmsName" class="form__field__input text-b3 text-b4-desktop" />
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="text-b3 text-b4-desktop">
+                  <span>First name</span>
+                  <input type="text" name="firstName" class="form__field__input text-b3 text-b4-desktop" />
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="text-b3 text-b4-desktop">
+                  <span>Last name</span>
+                  <input type="text" name="lastName" class="form__field__input text-b3 text-b4-desktop" />
+                </label>
+              </div>
+              <div class="form__field">
+                <label class="text-b3 text-b4-desktop">
+                  <span>Your email</span>
+                  <input type="email" name="email" class="form__field__input text-b3 text-b4-desktop" />
+                </label>
+              </div>
+            </div>
+
+            <div class="success__message">
+              <img src="./assets/images/check-circle-yellow.svg" alt="" class="success__message__icon" />
+              <h4 class="success__message__title h6 h8-desktpop">
+                Thank you for <br />
+                joining our waitlist.
+              </h4>
+              <p class="success__message__text text-b3 text-b4-desktop">
+                You'll be receiving an email <br />
+                confirmation shortly.
+              </p>
+            </div>
+
+            <button type="submit" class="waitlist__form__submit btn-1">Join the Waitlist</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" data-theme="dark" id="footer">
+      <div class="footer__wrapper">
+        <!-- Top Section -->
+        <div class="footer__top">
+          <!-- Logo Column -->
+          <div class="footer__logo">
+            <a href="/">
+              <img src="./assets/images/risqly-logo-dark.svg" alt="Risqly™ Logo" width="161" />
+            </a>
+            <p class="footer__tagline text-b1 h6-desktop">AI-powered underwriting assistant that gives you back time – literally.</p>
+          </div>
+
+          <!-- Navigation Columns -->
+          <div class="footer__nav">
+            <!-- Product Column -->
+            <div class="footer__nav-col">
+              <h4 class="footer__nav-title">EXPLORE</h4>
+              <ul>
+                <li><a href="#" class="link-1">Approach</a></li>
+                <li><a href="#" class="link-1">Impact</a></li>
+                <li><a href="#" class="link-1">Performance</a></li>
+                <li><a href="#" class="link-1">Benefits</a></li>
+                <li><a href="#" class="link-1">Privacy</a></li>
+                <li><a href="#" class="link-1">How it Works</a></li>
+              </ul>
+            </div>
+
+            <!-- Technology Column -->
+            <div class="footer__nav-col">
+              <h4 class="footer__nav-title">CONNECT</h4>
+              <ul>
+                <li><a href="#" class="link-1">LinkedIn</a></li>
+                <li><a href="#" class="link-1">X</a></li>
+              </ul>
+            </div>
+
+            <!-- Company Column -->
+            <div class="footer__nav-col footer__nav-col--legal">
+              <h4 class="footer__nav-title">LEGAL</h4>
+              <ul>
+                <li><a href="./privacy-policy.html" class="link-1 link-2-desktop">Privacy Policy</a></li>
+                <li><a href="./terms-and-conditions.html" class="link-1 link-2-desktop">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Section -->
+        <div class="footer__bottom">
+          <nav class="footer__legal">
+            <a href="./terms-and-conditions.html" class="footer__legal-link">Terms of Service</a>
+            <a href="./privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+          </nav>
+          <div class="footer__credit">website by <span>FIFTYSEVEN®</span></div>
+          <div class="footer__copyright">©2025 Risqly LLC</div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/global.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
+  </body>
+</html>
