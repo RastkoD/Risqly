@@ -530,7 +530,8 @@ h6,
 .navbar {
   color: var(--white);
   width: 100%;
-  padding: calc(16 * var(--scale)) calc(16 * var(--scale)) calc(10 * var(--scale));
+  padding: calc(16 * var(--scale)) calc(16 * var(--scale))
+    calc(10 * var(--scale));
   position: fixed;
   top: 0;
   left: 0;
@@ -587,9 +588,43 @@ h6,
   height: 100%;
   transition: all 0.3s;
   display: flex;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 .navbar__cta:hover .navbar__cta-text {
   transform: translate(0px, -100%);
+}
+
+.navbar__cta[data-disabled="true"] {
+  cursor: default;
+}
+
+.navbar__cta[data-disabled="true"] * {
+  pointer-events: none;
+}
+
+.navbar__cta .cta-link {
+  pointer-events: auto;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0.85;
+  color: inherit;
+
+  display: inline-block;
+  transform: translateZ(0);
+}
+
+.navbar__cta .cta-link::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.navbar__cta .cta-link:hover::after {
+  opacity: 1;
 }
 
 /* Hamburger (Mobile) */
@@ -630,7 +665,8 @@ h6,
 }
 
 .menu-overlay__content {
-  padding: calc(16 * var(--scale)) calc(16 * var(--scale)) calc(24 * var(--scale));
+  padding: calc(16 * var(--scale)) calc(16 * var(--scale))
+    calc(24 * var(--scale));
   background: rgba(43, 46, 54, 0.75);
   border: calc(1 * var(--scale)) solid rgba(52, 64, 71, 0.8);
   border-radius: calc(8 * var(--scale));
@@ -760,7 +796,8 @@ h6,
    FOOTER SECTION
    ========================================================== */
 .footer {
-  padding: calc(46 * var(--scale)) calc(26 * var(--scale)) calc(26 * var(--scale));
+  padding: calc(46 * var(--scale)) calc(26 * var(--scale))
+    calc(26 * var(--scale));
   margin: calc(16 * var(--scale));
   border-radius: calc(8 * var(--scale));
   background: rgb(0, 4, 14, 0.8);
@@ -865,7 +902,8 @@ h6,
 
 @media (min-width: 768px) {
   .footer {
-    padding: calc(60 * var(--scale)) calc(34 * var(--scale)) calc(40 * var(--scale));
+    padding: calc(60 * var(--scale)) calc(34 * var(--scale))
+      calc(40 * var(--scale));
     margin: calc(30 * var(--scale));
   }
 

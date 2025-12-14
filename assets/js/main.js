@@ -3,10 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   const sections = document.querySelectorAll("[data-theme]");
   const navbarCta = document.querySelector(".navbar__cta");
-  const navbarCtaTextCont = document.querySelectorAll(".navbar__cta .navbar__cta-text");
+  const navbarCtaTextCont = document.querySelectorAll(".navbar__cta-text");
+
+  const followMarkup = `
+    <span class="cta-text">Follow us</span>
+  <span class="cta-sep">&nbsp;</span>
+  <a href="https://linkedin.com" target="_blank" rel="noopener" class="cta-link">( LI )</a>
+  <span class="cta-sep">&nbsp;&amp;&nbsp;</span>
+  <a href="https://x.com" target="_blank" rel="noopener" class="cta-link">( x )</a>
+`;
 
   window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY + 0; // simulate “80px from top”
+    const scrollY = window.scrollY;
+
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
       const sectionTop = window.scrollY + rect.top;
@@ -16,14 +25,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentTheme = section.getAttribute("data-theme");
         navbar.classList.remove("light-theme", "dark-theme");
         navbar.classList.add(`${currentTheme}-theme`);
+
         if (section.id === "waitlist") {
-          navbarCta.href = "#footer";
-          navbarCtaTextCont[0].textContent = "Follow us  ( LI ) & ( x )";
-          navbarCtaTextCont[1].textContent = "Follow us  ( LI ) & ( x )";
+          // Disable CTA click but keep layout + animation
+          navbarCta.dataset.disabled = "true";
+          navbarCta.removeAttribute("href");
+
+          navbarCtaTextCont.forEach((el) => {
+            el.innerHTML = followMarkup;
+          });
         } else {
-          navbarCtaTextCont[0].textContent = "JOIN THE WAITLIST";
-          navbarCtaTextCont[1].textContent = "JOIN THE WAITLIST";
+          // Restore CTA behavior
+          navbarCta.dataset.disabled = "false";
           navbarCta.href = "#waitlist";
+
+          navbarCtaTextCont.forEach((el) => {
+            el.textContent = "JOIN THE WAITLIST";
+          });
         }
       }
     });
@@ -94,7 +112,9 @@ featuresCards.forEach((card) => {
   card.addEventListener("click", () => {
     const iconSvg = card.querySelector(".features__icon svg");
     const title = card.querySelector(".h9, h3").textContent;
-    const description = card.querySelector(".features__card-description").textContent;
+    const description = card.querySelector(
+      ".features__card-description"
+    ).textContent;
     const tag = card.querySelector(".tag");
     openPopup(iconSvg, title, description, tag);
   });
@@ -129,7 +149,12 @@ const validators = {
     };
   },
   bmsName: (value) => ({
-    isValid: (value !== "" && value !== "Other") || document.getElementById("otherBmsField").querySelector("input").value.trim() !== "",
+    isValid:
+      (value !== "" && value !== "Other") ||
+      document
+        .getElementById("otherBmsField")
+        .querySelector("input")
+        .value.trim() !== "",
     message: "Please select BMS you are using or specify your BMS",
   }),
 };
@@ -259,71 +284,228 @@ window.addEventListener("resize", updateFooterHeight);
 
 /* Animations */
 
-import { animate, scroll, stagger, inView } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
+import {
+  animate,
+  scroll,
+  stagger,
+  inView,
+} from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
 
 import { splitText } from "https://cdn.jsdelivr.net/npm/motion-plus@0.1.1/+esm";
 
+const EASE_IMAGE = [0.16, 0.7, 0.3, 1];
+const EASE_TEXT = [0.25, 0.55, 0.25, 1];
+const EASE_LONG = [0.22, 0.61, 0.36, 1];
+const EASE_CARD = [0.73, 0.32, 0.98, 0.53];
+
 // 1. Navbar
-animate(".navbar", { y: [-90, 0] }, { delay: 0, duration: 1, easing: "ease-out" });
+animate(
+  ".navbar",
+  { y: [-90, 0] },
+  { delay: 0, duration: 1, easing: "ease-out" }
+);
 
 // 2. Nav links
-animate(".navbar__menu", { y: [-70, 0] }, { delay: 0, duration: 1, easing: "ease-out" });
+animate(
+  ".navbar__menu",
+  { y: [-70, 0] },
+  { delay: 0, duration: 1, easing: "ease-out" }
+);
 
 // 3. CTA (appears last)
-animate(".navbar__cta", { y: [-140, 0] }, { delay: 0, duration: 1, easing: "ease-out" });
+animate(
+  ".navbar__cta",
+  { y: [-140, 0] },
+  { delay: 0, duration: 1, easing: "ease-out" }
+);
 
 inView(".hero", () => {
-  animate(".hero__image", { scale: [0.99, 1], opacity: [0, 1] }, { delay: 1, duration: 1, easing: "ease" });
-  animate(".hero__label", { opacity: [0, 1], y: [10, 0] }, { delay: 1.2, duration: 1, easing: "ease-out" });
-  animate(splitText(".hero__title").lines, { opacity: [0, 1], y: [20, 0] }, { type: "spring", duration: 1, bounce: 0, delay: stagger(0.15, { startDelay: 1.3 }) });
+  animate(
+    ".hero__image",
+    {
+      scale: [0.99, 1],
+      opacity: [0, 1],
+    },
+    {
+      delay: 0.45,
+      duration: 1.15,
+      easing: EASE_IMAGE,
+    }
+  );
 
-  animate(".hero__description", { opacity: [0, 1], y: [20, 0] }, { delay: 1.7, duration: 1, easing: "ease-out" });
-  animate(".hero__feature", { opacity: [0, 1], y: [10, 0] }, { delay: 1.8, duration: 1, easing: "ease-out" });
+  animate(
+    ".hero__label",
+    {
+      opacity: [0, 1],
+      y: [8, 0],
+    },
+    {
+      delay: 0.55,
+      duration: 1.2,
+      easing: EASE_TEXT,
+    }
+  );
+
+  animate(
+    splitText(".hero__title").lines,
+    {
+      opacity: [0, 1],
+      y: [12, 0],
+    },
+    {
+      delay: stagger(0.14, { startDelay: 0.7 }),
+      duration: 1.4,
+      easing: EASE_LONG,
+    }
+  );
+
+  animate(
+    ".hero__description",
+    {
+      opacity: [0, 1],
+      y: [12, 0],
+    },
+    {
+      delay: 1.05,
+      duration: 1.15,
+      easing: EASE_TEXT,
+    }
+  );
+
+  animate(
+    ".hero__feature",
+    {
+      opacity: [0, 1],
+      y: [8, 0],
+    },
+    {
+      delay: 1.25,
+      duration: 1,
+      easing: EASE_TEXT,
+    }
+  );
 });
 inView(".compare__card", () => {
-  animate(".compare__card", { opacity: [0, 1], scale: [0.99, 1], y: [30, 0] }, { delay: 0.3, duration: 1, easing: "ease-out" });
+  animate(
+    ".compare__card--new",
+    { opacity: [0, 1], scale: [0.99, 1], y: [50, 0] },
+    { delay: 0.8, duration: 1.15, easing: EASE_CARD }
+  );
+  animate(
+    ".compare__card--old",
+    { opacity: [0, 1], scale: [0.99, 1], y: [50, 0] },
+    { delay: 0.4, duration: 1.15, easing: EASE_CARD }
+  );
 });
 
 inView(".stats__data__wrapper", () => {
-  animate(".stat__data", { opacity: [0, 1], y: [30, 0] }, { delay: stagger(0.1), duration: 1, easing: "ease-out" });
+  animate(
+    ".stat__data",
+    { opacity: [0, 1], y: [30, 0] },
+    { delay: stagger(0.1), duration: 1, easing: "ease-out" }
+  );
 });
 
 inView(".stats__data__wrapper", () => {
-  animate(".stat__value", { opacity: [0, 1], y: [30, 0] }, { delay: 0.1, duration: 1, easing: "ease-out" });
-  animate(".stat__text", { opacity: [0, 1], y: [30, 0] }, { delay: 0.2, duration: 1, easing: "ease-out" });
+  animate(
+    ".stat__value",
+    { opacity: [0, 1], y: [30, 0] },
+    { delay: 0.1, duration: 1, easing: "ease-out" }
+  );
+  animate(
+    ".stat__text",
+    { opacity: [0, 1], y: [30, 0] },
+    { delay: 0.2, duration: 1, easing: "ease-out" }
+  );
 });
 
 inView(".compliance__item", () => {
-  animate(".compliance__metric-title", { opacity: [0, 1], y: [30, 0] }, { delay: 0.2, duration: 1, easing: "ease-out" });
-  animate(".compliance__metric-sub", { opacity: [0, 1], y: [30, 0] }, { delay: 0.3, duration: 1, easing: "ease-out" });
+  animate(
+    ".compliance__metric-title",
+    { opacity: [0, 1], y: [30, 0] },
+    { delay: 0.2, duration: 1, easing: "ease-out" }
+  );
+  animate(
+    ".compliance__metric-sub",
+    { opacity: [0, 1], y: [30, 0] },
+    { delay: 0.3, duration: 1, easing: "ease-out" }
+  );
 });
 
 inView(".perf__card", () => {
-  animate(".perf__card", { opacity: [0, 1], y: [30, 0] }, { type: "spring", duration: 0.8, bounce: 0, delay: stagger(0.25) });
+  animate(
+    ".perf__card",
+    { opacity: [0, 1], y: [30, 0] },
+    { type: "spring", duration: 0.8, bounce: 0, delay: stagger(0.25) }
+  );
 });
 
 inView(".workflow__step--1 .workflow__step__content", () => {
-  animate(".workflow__step--1 .workflow__step-number", { opacity: [0, 1], y: [20, 0] }, { delay: 0.3, duration: 1, easing: "ease-out" });
-  animate(".workflow__step--1 .workflow__step-title", { opacity: [0, 1], y: [20, 0] }, { delay: 0.4, duration: 1, easing: "ease-out" });
-  animate(".workflow__step--1 .workflow__step-description", { opacity: [0, 1], y: [20, 0] }, { delay: 0.5, duration: 1, easing: "ease-out" });
+  animate(
+    ".workflow__step--1 .workflow__step-number",
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 0.3, duration: 1, easing: "ease-out" }
+  );
+  animate(
+    ".workflow__step--1 .workflow__step-title",
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 0.4, duration: 1, easing: "ease-out" }
+  );
+  animate(
+    ".workflow__step--1 .workflow__step-description",
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 0.5, duration: 1, easing: "ease-out" }
+  );
 });
 
 inView(".workflow__step--2 .workflow__step__content", () => {
-  animate(".workflow__step--2 .workflow__step-number", { opacity: [0, 1], y: [20, 0] }, { delay: 0.3, duration: 1, easing: "ease-out" });
-  animate(".workflow__step--2 .workflow__step-title", { opacity: [0, 1], y: [20, 0] }, { delay: 0.4, duration: 1, easing: "ease-out" });
-  animate(".workflow__step--2 .workflow__step-description", { opacity: [0, 1], y: [20, 0] }, { delay: 0.5, duration: 1, easing: "ease-out" });
+  animate(
+    ".workflow__step--2 .workflow__step-number",
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 0.3, duration: 1, easing: "ease-out" }
+  );
+  animate(
+    ".workflow__step--2 .workflow__step-title",
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 0.4, duration: 1, easing: "ease-out" }
+  );
+  animate(
+    ".workflow__step--2 .workflow__step-description",
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 0.5, duration: 1, easing: "ease-out" }
+  );
 });
 
 inView(".workflow__step--3 .workflow__step__content", () => {
-  animate(".workflow__step--3 .workflow__step-number", { opacity: [0, 1], y: [20, 0] }, { delay: 0.3, duration: 1, easing: "ease-out" });
-  animate(".workflow__step--3 .workflow__step-title", { opacity: [0, 1], y: [20, 0] }, { delay: 0.4, duration: 1, easing: "ease-out" });
-  animate(".workflow__step--3 .workflow__step-description", { opacity: [0, 1], y: [20, 0] }, { delay: 0.5, duration: 1, easing: "ease-out" });
+  animate(
+    ".workflow__step--3 .workflow__step-number",
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 0.3, duration: 1, easing: "ease-out" }
+  );
+  animate(
+    ".workflow__step--3 .workflow__step-title",
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 0.4, duration: 1, easing: "ease-out" }
+  );
+  animate(
+    ".workflow__step--3 .workflow__step-description",
+    { opacity: [0, 1], y: [20, 0] },
+    { delay: 0.5, duration: 1, easing: "ease-out" }
+  );
 });
 
 inView(".priv__card", () => {
-  animate(".priv__card", { opacity: [0, 1], y: [30, 0] }, { type: "spring", duration: 0.8, bounce: 0, delay: stagger(0.25) });
+  animate(
+    ".priv__card",
+    { opacity: [0, 1], y: [30, 0] },
+    { type: "spring", duration: 0.8, bounce: 0, delay: stagger(0.25) }
+  );
 });
 
 inView(".waitlist__form__submit", () => {
-  animate(".waitlist__form__submit", { opacity: [0, 1], y: [20, 0] }, { delay: 0.2, duration: 0.7, easing: "ease-out" });
+  animate(
+    ".waitlist__form__submit",
+    { y: [20, 0] },
+    { delay: 0.2, duration: 1.2, easing: EASE_TEXT }
+  );
 });
