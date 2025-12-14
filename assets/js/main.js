@@ -296,7 +296,7 @@ import { splitText } from "https://cdn.jsdelivr.net/npm/motion-plus@0.1.1/+esm";
 const EASE_IMAGE = [0.16, 0.7, 0.3, 1];
 const EASE_TEXT = [0.25, 0.55, 0.25, 1];
 const EASE_LONG = [0.22, 0.61, 0.36, 1];
-const EASE_CARD = [0.73, 0.32, 0.98, 0.53];
+const EASE_CARD = [0.23, 0.98, 0.56, 1];
 
 // 1. Navbar
 animate(
@@ -388,13 +388,13 @@ inView(".hero", () => {
 inView(".compare__card", () => {
   animate(
     ".compare__card--new",
-    { opacity: [0, 1], scale: [0.99, 1], y: [50, 0] },
-    { delay: 0.8, duration: 1.15, easing: EASE_CARD }
+    { opacity: [0, 1], scale: [0.99, 1], y: [70, 0] },
+    { delay: 0.7, duration: 1.4, easing: EASE_CARD }
   );
   animate(
     ".compare__card--old",
-    { opacity: [0, 1], scale: [0.99, 1], y: [50, 0] },
-    { delay: 0.4, duration: 1.15, easing: EASE_CARD }
+    { opacity: [0, 1], scale: [0.99, 1], y: [70, 0] },
+    { delay: 0.4, duration: 1.4, easing: EASE_CARD }
   );
 });
 
