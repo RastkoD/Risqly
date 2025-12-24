@@ -301,22 +301,22 @@ const EASE_CARD = [0.23, 0.98, 0.56, 1];
 // 1. Navbar
 animate(
   ".navbar",
-  { y: [-90, 0] },
-  { delay: 0, duration: 1, easing: EASE_TEXT }
+  { y: [-90, 0], opacity: [0, 1] },
+  { delay: 0, duration: 1, easing: EASE_LONG }
 );
 
 // 2. Nav links
 animate(
   ".navbar__menu",
   { y: [-70, 0] },
-  { delay: 0, duration: 1, easing: EASE_TEXT }
+  { delay: 0, duration: 1, easing: EASE_LONG }
 );
 
 // 3. CTA (appears last)
 animate(
   ".navbar__cta",
   { y: [-140, 0] },
-  { delay: 0, duration: 1, easing: EASE_TEXT }
+  { delay: 0, duration: 1, easing: EASE_LONG }
 );
 
 inView(".hero", () => {
@@ -346,14 +346,14 @@ inView(".hero", () => {
   );
 
   animate(
-    splitText(".hero__title").lines,
+    ".hero__title",
     {
       opacity: [0, 1],
       y: [12, 0],
     },
     {
-      delay: stagger(0.14, { startDelay: 0.7 }),
-      duration: 1.4,
+      delay: 0.8,
+      duration: 1.2,
       easing: EASE_LONG,
     }
   );
@@ -428,7 +428,7 @@ inView(".stats__data__wrapper", () => {
   });
 });
 
-inView(".features", () => {
+inView(".features__background", () => {
   animate(
     ".features__header .badge",
     {
@@ -604,7 +604,7 @@ inView(".priv__card", () => {
 inView(".waitlist__form__submit", () => {
   animate(
     ".waitlist__form__submit",
-    { y: [20, 0] },
+    { y: [12, 0] },
     { delay: 0.2, duration: 1.2, easing: EASE_TEXT }
   );
 });

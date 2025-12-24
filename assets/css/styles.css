@@ -33,6 +33,7 @@
   border: calc(0.7 * var(--scale)) solid rgba(0, 0, 0, 0.12);
   border-radius: calc(100 * var(--scale));
   color: var(--white);
+  opacity: 0;
 }
 .hero__label .star {
   font-size: calc(10 * var(--scale));
@@ -46,12 +47,14 @@
 .hero__title {
   color: var(--white);
   max-width: 10ch;
+  opacity: 0;
 }
 
 .hero__description {
   color: var(--white-70);
   margin-top: calc(20 * var(--scale));
   max-width: 30ch;
+  opacity: 0;
 }
 
 .hero__features {
@@ -68,6 +71,7 @@
   display: flex;
   gap: calc(6 * var(--scale));
   color: var(--white);
+  opacity: 0;
 }
 .hero__feature::before {
   content: "";
@@ -83,6 +87,7 @@
   display: flex;
   justify-content: center;
   margin-top: calc(-6 * var(--scale));
+  opacity: 0;
 }
 
 .hero__app-image {
