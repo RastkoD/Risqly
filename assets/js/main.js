@@ -291,8 +291,6 @@ import {
   inView,
 } from "https://cdn.jsdelivr.net/npm/motion@latest/+esm";
 
-import { splitText } from "https://cdn.jsdelivr.net/npm/motion-plus@0.1.1/+esm";
-
 const EASE_IMAGE = [0.16, 0.7, 0.3, 1];
 const EASE_TEXT = [0.25, 0.55, 0.25, 1];
 const EASE_LONG = [0.22, 0.61, 0.36, 1];
@@ -606,5 +604,22 @@ inView(".waitlist__form__submit", () => {
     ".waitlist__form__submit",
     { y: [12, 0] },
     { delay: 0.2, duration: 1.2, easing: EASE_TEXT }
+  );
+});
+
+const scrollSections = document.querySelectorAll(".scroll-scale");
+
+scrollSections.forEach((section) => {
+  scroll(
+    animate(section, {
+      scale: [0.98, 1],
+      opacity: [0.9, 1],
+    }),
+    {
+      target: section,
+      // Animation starts when top of section hits bottom of screen
+      // and ends when top of section hits top of screen
+      offset: ["start end", "start start"],
+    }
   );
 });

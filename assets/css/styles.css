@@ -1676,6 +1676,30 @@ select.form__field__input {
   color: var(--dark);
   cursor: pointer;
   transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.waitlist__form__submit-overflow {
+  display: flex;
+  flex-direction: column;
+  height: 1em; /* height of one text line */
+  overflow: hidden;
+}
+
+.waitlist__form__submit-text {
+  height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.waitlist__form__submit:hover .waitlist__form__submit-text {
+  transform: translateY(-100%);
 }
 
 /* Success state */
